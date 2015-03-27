@@ -31,6 +31,7 @@ socket.on('remote:down', function (data) {
 });
 
 function emit(eventName, data) {
+    console.log('remote:' + eventName);
     socket.emit('remote:' + eventName, data);
 }
 

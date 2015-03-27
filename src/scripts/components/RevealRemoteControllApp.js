@@ -4,6 +4,8 @@ var React = require('react/addons');
 var ReactTransitionGroup = React.addons.TransitionGroup;
 var emit = require('./sockets');
 
+var Control = require('./Control');
+
 //emit('down', {presentation: 'down'});
 
 // CSS
@@ -19,6 +21,7 @@ var RevealRemoteControllApp = React.createClass({
         <ReactTransitionGroup transitionName="fade">
           <img src={imageURL} />
         </ReactTransitionGroup>
+        <Control></Control>
       </div>
     );
   }
