@@ -2,11 +2,7 @@
 
 var React = require('react/addons');
 var ReactTransitionGroup = React.addons.TransitionGroup;
-var emit = require('./sockets');
-
 var Control = require('./Control');
-
-//emit('down', {presentation: 'down'});
 
 // CSS
 require('../../styles/normalize.css');
