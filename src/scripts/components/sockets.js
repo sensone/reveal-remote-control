@@ -3,18 +3,18 @@ var io = require('socket.io-client');
 var socket = io('http://localhost:3005');
 
 socket.on('connect', function () {
-    alert('connected!')
+    console.log('connected!');
 });
 
 socket.on('event', function (data) {
-    alert('event!')
+    console.log('event!')
 });
 
 socket.on('next', function (data) {
-    alert('next!');
-    alert(JSON.stringify(data));
+    console.log('next!');
+    console.log(JSON.stringify(data));
 });
 
 socket.on('disconnect', function () {
-    alert('disconnected!')
+    console.log('disconnected!')
 });
