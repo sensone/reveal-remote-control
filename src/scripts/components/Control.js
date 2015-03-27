@@ -4,7 +4,6 @@ var React = require('react/addons');
 var emit = require('./sockets');
 
 require('styles/Control.styl');
-require('purecss');
 
 var Control = React.createClass({
     handleClick: function (e) {
