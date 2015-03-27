@@ -10,28 +10,16 @@ socket.on('disconnect', function () {
     console.log('disconnected!')
 });
 
-socket.on('remote:left', function (data) {
-    console.log('remote:left!');
-    console.log(JSON.stringify(data));
-});
+function changeHandler(data) {
+    console.log('change action');
 
-socket.on('remote:right', function (data) {
-    console.log('remote:right!');
     console.log(JSON.stringify(data));
-});
-
-socket.on('remote:up', function (data) {
-    console.log('remote:up!');
-    console.log(JSON.stringify(data));
-});
-
-socket.on('remote:down', function (data) {
-    console.log('remote:down!');
-    console.log(JSON.stringify(data));
-});
+}
+socket.on('remote:slidechanged', changeHandler);
 
 function emit(eventName, data) {
     console.log('remote:' + eventName);
+
     socket.emit('remote:' + eventName, data);
 }
 
