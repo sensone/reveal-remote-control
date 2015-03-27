@@ -4,6 +4,7 @@ var React = require('react/addons');
 var emit = require('./sockets');
 
 require('styles/Control.styl');
+require('purecss');
 
 var Control = React.createClass({
     handleClick: function (e) {
@@ -18,16 +19,16 @@ var Control = React.createClass({
             <div>
                 <p>Content for Control</p>
                 <div>
-                    <button onClick={this.handleClick}>Left</button>
+                    <button className="pure-button" onClick={this.handleClick}>Left</button>
                 </div>
                 <div>
-                    <button onClick={this.handleClick}>Right</button>
+                    <button className="pure-button" onClick={this.handleClick}>Right</button>
                 </div>
                 <div>
-                    <button onClick={this.handleClick}>Up</button>
+                    <button className="pure-button" onClick={this.handleClick}>Up</button>
                 </div>
                 <div>
-                    <button onClick={this.handleClick}>Down</button>
+                    <button className="pure-button" onClick={this.handleClick}>Down</button>
                 </div>
             </div>
         );
