@@ -1,18 +1,19 @@
 'use strict';
 
-var React = require('react/addons');
-var ReactTransitionGroup = React.addons.TransitionGroup;
-var Control = require('./Control');
-var Router = require('react-router');
-var { Route, DefaultRoute, RouteHandler, Link } = Router;
+let React = require('react/addons')
+    , ReactTransitionGroup = React.addons.TransitionGroup
+    , Control = require('./Control')
+    , Router = require('react-router')
+    , { Route, DefaultRoute, RouteHandler, Link } = Router;
+
 // CSS
 require('../../styles/normalize.css');
 require('../../styles/main.css');
 require('purecss');
 
-var imageURL = require('../../images/yeoman.png');
+let imageURL = require('../../images/yeoman.png');
 
-var RevealRemoteControllApp = React.createClass({
+let RevealRemoteControllApp = React.createClass({
   render: function() {
       return (
           <div id="layout">
@@ -22,7 +23,7 @@ var RevealRemoteControllApp = React.createClass({
 
               <div id="menu">
                   <div className="pure-menu">
-                      <a className="pure-menu-heading" href="/">Remote</a>
+                      <a className="pure-menu-heading" href="#/">Remote</a>
                       <ul className="pure-menu-list">
                           <li className="pure-menu-item">
                               <a href="#/control" className="pure-menu-link">Control</a>

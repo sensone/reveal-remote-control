@@ -1,13 +1,13 @@
 'use strict';
 
-var React = require('react/addons');
-var emit = require('./sockets');
+let React = require('react/addons')
+    , emit = require('./sockets');
 
 require('styles/Control.styl');
 
-var Control = React.createClass({
-    handleClick: function (e) {
-        var action = e.target.firstChild.nodeValue.toLowerCase();
+let Control = React.createClass({
+    handleClick: (e) => {
+        let action = e.target.firstChild.nodeValue.toLowerCase();
 
         console.log(action);
 

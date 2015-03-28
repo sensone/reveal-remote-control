@@ -1,6 +1,8 @@
-var io = require('socket.io-client');
+'use strict';
 
-var socket = io('http://localhost:3005');
+let io = require('socket.io-client');
+
+let socket = io('http://localhost:3005');
 
 socket.on('connect', function () {
     console.log('connected!');

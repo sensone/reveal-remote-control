@@ -1,10 +1,10 @@
 'use strict';
 
-var React = require('react/addons');
+let React = require('react/addons');
 
 require('styles/Pointer.styl');
 
-var Pointer = React.createClass({
+let Pointer = React.createClass({
   render: function () {
     return (
         <div>

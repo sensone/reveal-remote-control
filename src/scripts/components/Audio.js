@@ -1,10 +1,10 @@
 'use strict';
 
-var React = require('react/addons');
+let React = require('react/addons');
 
 require('styles/Audio.styl');
 
-var Audio = React.createClass({
+let Audio = React.createClass({
   toggleAudioStream: () => {
     console.log('toggle audio stream!');
   },

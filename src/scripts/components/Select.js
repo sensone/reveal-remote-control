@@ -1,10 +1,10 @@
 'use strict';
 
-var React = require('react/addons');
+let React = require('react/addons');
 
 require('styles/Select.styl');
 
-var Select = React.createClass({
+let Select = React.createClass({
   render: function () {
     return (
         <div>
@@ -14,5 +14,5 @@ var Select = React.createClass({
   }
 });
 
-module.exports = Select; 
+module.exports = Select;
 
