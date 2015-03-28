@@ -28,16 +28,16 @@ class Control extends React.Component {
       <div>
         <p>Content for Control</p>
         <div>
-          <button className="pure-button" onClick={this.handleClick}>Left</button>
+          <button className={'pure-button ' + this.state.buttons.left} onClick={this.handleClick}>Left</button>
         </div>
         <div>
-          <button className="pure-button" onClick={this.handleClick}>Right</button>
+          <button className={'pure-button ' + this.state.buttons.right} onClick={this.handleClick}>Right</button>
         </div>
         <div>
-          <button className="pure-button" onClick={this.handleClick}>Up</button>
+          <button className={'pure-button ' + this.state.buttons.up} onClick={this.handleClick}>Up</button>
         </div>
         <div>
-          <button className="pure-button" onClick={this.handleClick.bind(this)}>Down {this.state.test}</button>
+          <button className={'pure-button ' + this.state.buttons.down} onClick={this.handleClick.bind(this)}>Down {this.state.test}</button>
         </div>
       </div>
     );
