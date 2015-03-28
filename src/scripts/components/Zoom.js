@@ -1,18 +1,18 @@
 'use strict';
 
-var React = require('react/addons');
+const React = require('react/addons');
 
 require('styles/Zoom.styl');
 
-var Zoom = React.createClass({
-  render: function () {
+class Zoom {
+  render() {
     return (
-        <div>
-          <p>Content for Zoom</p>
-        </div>
-      );
+      <div>
+        <p>Content for Zoom</p>
+      </div>
+    );
   }
-});
+}
 
-module.exports = Zoom; 
+module.exports = Zoom;
 

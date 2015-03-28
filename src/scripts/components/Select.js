@@ -1,18 +1,18 @@
 'use strict';
 
-let React = require('react/addons');
+const React = require('react/addons');
 
 require('styles/Select.styl');
 
-let Select = React.createClass({
-  render: function () {
+class Select {
+  render() {
     return (
-        <div>
-          <p>Content for Select</p>
-        </div>
-      );
+      <div>
+        <p>Content for Select</p>
+      </div>
+    );
   }
-});
+}
 
 module.exports = Select;
 

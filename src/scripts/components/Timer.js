@@ -1,18 +1,18 @@
 'use strict';
 
-var React = require('react/addons');
+const React = require('react/addons');
 
 require('styles/Timer.styl');
 
-var Timer = React.createClass({
-  render: function () {
+class Timer extends React.Component {
+  render() {
     return (
-        <div>
-          <p>Content for Timer</p>
-        </div>
-      );
+      <div>
+        <p>Content for Timer</p>
+      </div>
+    );
   }
-});
+}
 
-module.exports = Timer; 
+module.exports = Timer;
 

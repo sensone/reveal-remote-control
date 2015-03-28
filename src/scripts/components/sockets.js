@@ -1,28 +1,27 @@
 'use strict';
 
-let io = require('socket.io-client');
+const io = require('socket.io-client')
+      , socket = io('http://localhost:3005');
 
-let socket = io('http://localhost:3005');
-
-socket.on('connect', function () {
-    console.log('connected!');
+socket.on('connect' , function () {
+  console.log('connected!');
 });
 
-socket.on('disconnect', function () {
-    console.log('disconnected!')
+socket.on('disconnect' , function () {
+  console.log('disconnected!')
 });
 
 function changeHandler(data) {
-    console.log('change action');
+  console.log('change action');
 
-    console.log(JSON.stringify(data));
+  console.log(JSON.stringify(data));
 }
-socket.on('remote:slidechanged', changeHandler);
+socket.on('remote:slidechanged' , changeHandler);
 
-function emit(eventName, data) {
-    console.log('remote:' + eventName);
+function emit(eventName , data) {
+  console.log('remote:' + eventName);
 
-    socket.emit('remote:' + eventName, data);
+  socket.emit('remote:' + eventName , data);
 }
 
 module.exports = emit;

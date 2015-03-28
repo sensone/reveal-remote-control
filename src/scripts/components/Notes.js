@@ -1,18 +1,18 @@
 'use strict';
 
-var React = require('react/addons');
+const React = require('react/addons');
 
 require('styles/Notes.styl');
 
-var Notes = React.createClass({
-  render: function () {
+class Notes {
+  render() {
     return (
-        <div>
-          <p>Content for Notes</p>
-        </div>
-      );
+      <div>
+        <p>Content for Notes</p>
+      </div>
+    );
   }
-});
+}
 
-module.exports = Notes; 
+module.exports = Notes;
 

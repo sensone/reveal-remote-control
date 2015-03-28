@@ -1,16 +1,16 @@
 'use strict';
 
 var RevealRemoteControllApp = require('./RevealRemoteControllApp')
-    , React = require('react')
-    , Router = require('react-router')
-    , {Route, DefaultRoute} = Router
-    , Control = require('./Control')
-    , Pointer = require('./Pointer')
-    , Audio = require('./Audio')
-    , Zoom = require('./Zoom')
-    , Timer = require('./Timer')
-    , Notes = require('./Notes')
-    , Select = require('./Select');
+  , React = require('react')
+  , Router = require('react-router')
+  , {Route, DefaultRoute} = Router
+  , Control = require('./Control')
+  , Pointer = require('./Pointer')
+  , Audio = require('./Audio')
+  , Zoom = require('./Zoom')
+  , Timer = require('./Timer')
+  , Notes = require('./Notes')
+  , Select = require('./Select');
 
 var content = document.getElementById('content');
 
@@ -26,6 +26,6 @@ var Routes = (
   </Route>
 );
 
-Router.run(Routes, function (Handler) {
-  React.render(<Handler/>, content);
+Router.run(Routes , function (Handler) {
+  React.render(<Handler/> , content);
 });
