@@ -7,8 +7,8 @@ require('styles/Status.styl');
 class Status extends React.Component{
   render() {
     return (
-        <div>
-          <p>Status: Connected!</p>
+        <div className="panel">
+          Status: Connected!
         </div>
       );
   }

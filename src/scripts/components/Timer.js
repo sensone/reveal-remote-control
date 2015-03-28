@@ -66,8 +66,6 @@ class Timer extends React.Component {
       <div>
         <p>Presentatino time: {this.state.presentationTime}</p>
         <p>Slide time: {this.state.slideTime}</p>
-
-        <button className="pure-button pure-button-primary" onClick={this.changeSlide}>Change slide!</button>
       </div>
     );
   }

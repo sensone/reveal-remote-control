@@ -26,18 +26,23 @@ class Control extends React.Component {
   render() {
     return (
       <div>
-        <p>Content for Control {this.state.test}</p>
-        <div>
-          <button className={'pure-button ' + this.state.buttons.left} onClick={this.handleClick}>Left</button>
+        <div className="row">
+          <div className="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4">
+            <button className={'btn btn-primary ' + this.state.buttons.up} onClick={this.handleClick}>Up</button>
+          </div>
         </div>
-        <div>
-          <button className={'pure-button ' + this.state.buttons.right} onClick={this.handleClick}>Right</button>
+        <div className="row">
+          <div className="col-md-4 col-xs-4">
+            <button className={'btn btn-primary ' + this.state.buttons.left} onClick={this.handleClick}>Left</button>
+          </div>
+          <div className="col-md-4 col-xs-4 col-xs-offset-4 col-md-offset-4">
+            <button className={'btn btn-primary ' + this.state.buttons.right} onClick={this.handleClick}>Right</button>
+          </div>
         </div>
-        <div>
-          <button className={'pure-button ' + this.state.buttons.up} onClick={this.handleClick}>Up</button>
-        </div>
-        <div>
-          <button className={'pure-button ' + this.state.buttons.down} onClick={this.handleClick.bind(this)}>Down</button>
+        <div className="row">
+          <div className="col-md-4 col-xs-4 col-xs-offset-4 col-md-offset-4">
+            <button className={'btn btn-primary ' + this.state.buttons.down} onClick={this.handleClick.bind(this)}>Down</button>
+          </div>
         </div>
       </div>
     );

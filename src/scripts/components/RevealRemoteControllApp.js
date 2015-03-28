@@ -13,7 +13,6 @@ const React = require('react/addons')
 // CSS
 require('../../styles/normalize.css');
 require('../../styles/main.css');
-require('purecss');
 
 class RevealRemoteControllApp extends React.Component {
   constructor(props) {
@@ -31,7 +30,7 @@ class RevealRemoteControllApp extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="container">
         <Status/>
         <Menu/>
         <Timer/>
