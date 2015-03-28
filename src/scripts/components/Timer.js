@@ -65,10 +65,10 @@ class Timer extends React.Component {
     return (
       <div className="row timer-wrapper">
         <div className="col-xs-6 timer-row">
-          <span>Presentation time:</span> {this.state.presentationTime}
+          <span>Presentation:</span> {this.state.presentationTime}
         </div>
         <div className="col-xs-6 timer-row">
-          <span>Slide time:</span> {this.state.slideTime}
+          <span>Slide:</span> {this.state.slideTime}
         </div>
       </div>
     );
