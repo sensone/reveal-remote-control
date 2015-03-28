@@ -39,3 +39,14 @@ html, body {
 .fade-leave.fade-leave-active {
   opacity: 0.01;
 }
+
+.timer-row {
+  color: #3D86B7;
+}
+.timer-row span {
+  font-size: 1.5em;
+}
+
+.timer-wrapper {
+  margin: 20px auto;
+}

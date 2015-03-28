@@ -7,7 +7,7 @@ require('styles/Status.styl');
 class Status extends React.Component{
   render() {
     return (
-        <div className="panel">
+        <div className="label label-success">
           Status: Connected!
         </div>
       );
