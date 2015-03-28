@@ -2,10 +2,12 @@
 
 const io = require('socket.io-client')
   , model = require('./model')
-  , socket = io('http://localhost:3005');
+  , socket = io('http://192.168.0.93:3005');
 
 socket.on('connect' , function () {
   console.log('connected!');
+
+  emit('connect');
 });
 
 socket.on('disconnect' , function () {
@@ -15,7 +17,7 @@ socket.on('disconnect' , function () {
 function changeHandler(data) {
   console.log('change action');
 
-  model.set(data)
+  model.set(data);
   console.log(JSON.stringify(data));
 }
 socket.on('remote:slidechanged' , changeHandler);
