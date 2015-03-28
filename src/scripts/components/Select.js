@@ -2,8 +2,6 @@
 
 const React = require('react/addons');
 
-require('styles/Select.styl');
-
 class Select extends React.Component {
   render() {
     return (

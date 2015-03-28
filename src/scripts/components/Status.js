@@ -2,15 +2,14 @@
 
 const React = require('react/addons');
 
-require('styles/Status.styl');
-
 class Status extends React.Component{
   render() {
     return (
-        <div className="label label-success">
-          Status: Connected!
-        </div>
-      );
+      <div className="status">
+        <span className="status__text">Slides list</span>
+        <span className="status__text status__text--right">Status: Connected!</span>
+      </div>
+    );
   }
 }
 

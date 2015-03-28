@@ -34,11 +34,7 @@ class RevealRemoteControllApp extends React.Component {
         <Status/>
         <Menu/>
         <Timer/>
-        <div className="main">
-          <ReactTransitionGroup transitionName="fade">
-            <RouteHandler/>
-          </ReactTransitionGroup>
-        </div>
+        <RouteHandler/>
       </div>
     );
   }

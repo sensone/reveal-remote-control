@@ -3,8 +3,6 @@
 const React = require('react/addons')
   , model = require('./model');
 
-require('styles/Timer.styl');
-
 class Timer extends React.Component {
   constructor(props) {
     super(props);
@@ -43,7 +41,7 @@ class Timer extends React.Component {
     minutes = Math.floor(minutes);
     seconds = Math.floor(seconds);
 
-    return (minutes < 10 ? '0' + minutes : minutes) + ' : ' + (seconds < 10 ? '0' + seconds : seconds);
+    return (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
   }
 
   tick() {
@@ -63,12 +61,14 @@ class Timer extends React.Component {
 
   render() {
     return (
-      <div className="row timer-wrapper">
-        <div className="col-xs-6 timer-row">
-          <span>Presentation:</span> {this.state.presentationTime}
+      <div className="timer-wrapper">
+        <div className="time-element">
+          <span className="time-element__label">Slide Time: </span>
+          <span className="time-element__time">{this.state.slideTime}</span>
         </div>
-        <div className="col-xs-6 timer-row">
-          <span>Slide:</span> {this.state.slideTime}
+        <div className="time-element time-element--right">
+          <span className="time-element__label">Total Time: </span>
+          <span className="time-element__time">{this.state.presentationTime}</span>
         </div>
       </div>
     );
