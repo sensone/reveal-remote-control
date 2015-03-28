@@ -1,9 +1,10 @@
 'use strict';
 
-const React = require('react/addons');
-let model = require('./model');
+const React = require('react/addons')
+  , Control = require('./SmallControl');
 
-require('styles/Notes.styl');
+
+let model = require('./model');
 
 class Notes extends React.Component {
   constructor(props) {
@@ -19,7 +20,10 @@ class Notes extends React.Component {
   }
   render() {
     return (
-      <div dangerouslySetInnerHTML={this.createMarkup()} />
+      <div>
+        <div className="notes-wrapper" dangerouslySetInnerHTML={this.createMarkup()} />
+        <Control size="small"/>
+      </div>
     );
   }
 }

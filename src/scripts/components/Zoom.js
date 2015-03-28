@@ -1,14 +1,14 @@
 'use strict';
 
-const React = require('react/addons');
-
-require('styles/Zoom.styl');
+const React = require('react/addons')
+  , Control = require('./SmallControl');
 
 class Zoom extends React.Component {
   render() {
     return (
       <div>
-        <p>Content for Zoom</p>
+        <div className="zoom-wrapper">Content for Zoom</div>
+        <Control size="small"/>
       </div>
     );
   }

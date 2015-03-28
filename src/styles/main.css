@@ -40,25 +40,155 @@ html, body {
   opacity: 0.01;
 }
 
-.timer-row {
-  color: #3D86B7;
+.status {
+  height: 10%;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  overflow: hidden;
 }
-.timer-row span {
-  font-size: 1.5em;
+
+.status__text {
+  font-size: 1em;
+  color: #fff;
+  float: left;
+}
+
+.status__text--right {
+  float: right;
+}
+
+.menu {
+  padding-left: 0;
+  background-color: #3D86B7;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.menu__item {
+  display: inline-block;
+  width: 25%;
+  box-sizing: border-box;
+}
+
+.menu__item--active .menu__link {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.menu__link {
+  display: block;
+  background-color: #3D86B7;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #ccc;
+  border-right: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.menu__item:last-child .menu__link {
+  border-right: none;
 }
 
 .timer-wrapper {
-  margin: 20px auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  overflow: hidden;
 }
 
-.flex-container {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
+.time-element {
+  width: 50%;
+  float: left;
 }
 
-.flex-item {
-  -webkit-flex: 1 auto;
-  flex: 1 auto;
+.time-element--right {
+  float: right;
+}
+
+.time-element__label {
+  color: #3D86B7;
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+
+.time-element__time {
+  color: #3D86B7;
+  font-size: 1.5em;
+}
+
+.row {
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+.row .fa {
+  color: #3D86B7;
+  font-size: 4em;
+}
+
+.row--up, .row--down {
+  padding: 10% 0;
+}
+
+.row--left {
+  float: left;
+  width: 50%;
+  border-right: 1px solid #ccc;
+  text-align: left;
+}
+
+.row > div.invisible {
+  opacity: .5;
+}
+
+.row--right {
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+.row--right, .row--left {
+  box-sizing: border-box;
+  padding: 15% 5%;
+}
+
+.row--left-right {
+  overflow: hidden;
+}
+
+.notes-wrapper {
+  height: 50vh;
+}
+
+.zoom-wrapper {
+  height: 50vh;
+}
+
+.pointer-wrapper {
+  height: 50vh;
+}
+
+.small .row {
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+
+.small .row--up, .small .row--down {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.small .row--left, .small .row--right {
+  width: auto;
+  float: none;
+  text-align: center;
+}
+
+.small .row--right {
+  border-left: 1px solid #ccc;
+}
+
+.small .row--left-right div:first-child {
+  border-bottom: 1px solid #ccc;
 }

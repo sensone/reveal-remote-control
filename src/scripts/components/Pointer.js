@@ -1,14 +1,14 @@
 'use strict';
 
-const React = require('react/addons');
-
-require('styles/Pointer.styl');
+const React = require('react/addons')
+  , Control = require('./SmallControl');
 
 class Pointer extends React.Component {
   render() {
     return (
       <div>
-        <p>Content for Pointer</p>
+        <div className="pointer-wrapper">Content for Pointer</div>
+        <Control size="small"/>
       </div>
     );
   }

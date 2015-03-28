@@ -34,25 +34,26 @@ class Control extends React.Component {
     return (
       <div className={this.props.size}>
         <div className="row row--up">
-          <div data-action="up" className={'btn btn-primary ' + this.state.buttons.up} onClick={this.handleClick}>
-            <i className="fa fa-chevron-up"></i>
+          <div  data-action="left" className={'row--left ' + this.state.buttons.left} onClick={this.handleClick}>
+            <i className="fa fa-chevron-left"></i>
           </div>
         </div>
 
         <div className="row row--left-right">
-          <div  data-action="left" className={'row--left ' + this.state.buttons.left} onClick={this.handleClick}>
-            <i className="fa fa-chevron-left"></i>
+          <div data-action="up" className={'btn btn-primary ' + this.state.buttons.up} onClick={this.handleClick}>
+            <i className="fa fa-chevron-up"></i>
           </div>
 
-          <div data-action="right" className={'row--right ' + this.state.buttons.right} onClick={this.handleClick}>
-            <i className="fa fa-chevron-right"></i>
+          <div data-action="down" className={'btn btn-primary ' + this.state.buttons.down} onClick={this.handleClick}>
+            <i className="fa fa-chevron-down"></i>
           </div>
         </div>
 
         <div className="row row--down">
-          <div data-action="down" className={'btn btn-primary ' + this.state.buttons.down} onClick={this.handleClick}>
-            <i className="fa fa-chevron-down"></i>
+          <div data-action="right" className={'row--right ' + this.state.buttons.right} onClick={this.handleClick}>
+            <i className="fa fa-chevron-right"></i>
           </div>
+
         </div>
       </div>
     );
