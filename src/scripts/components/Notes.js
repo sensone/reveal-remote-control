@@ -4,7 +4,7 @@ const React = require('react/addons');
 
 require('styles/Notes.styl');
 
-class Notes {
+class Notes extends React.Component {
   render() {
     return (
       <div>

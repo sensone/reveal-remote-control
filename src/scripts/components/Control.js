@@ -5,7 +5,7 @@ const React = require('react/addons')
 
 require('styles/Control.styl');
 
-class Control {
+class Control extends React.Component {
   handleClick(e) {
     let action = e.target.firstChild.nodeValue.toLowerCase();
 

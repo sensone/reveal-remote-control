@@ -4,7 +4,7 @@ const React = require('react/addons');
 
 require('styles/Zoom.styl');
 
-class Zoom {
+class Zoom extends React.Component {
   render() {
     return (
       <div>

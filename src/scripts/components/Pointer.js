@@ -4,7 +4,7 @@ const React = require('react/addons');
 
 require('styles/Pointer.styl');
 
-class Pointer {
+class Pointer extends React.Component {
   render() {
     return (
       <div>
