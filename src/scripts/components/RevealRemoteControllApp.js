@@ -6,6 +6,7 @@ const React = require('react/addons')
   , Router = require('react-router')
   , Timer = require('./Timer')
   , Menu = require('./Menu')
+  , Status = require('./Status')
   , model = require('./model')
   , { Route, DefaultRoute, RouteHandler, Link } = Router;
 
@@ -31,10 +32,11 @@ class RevealRemoteControllApp extends React.Component {
   render() {
     return (
       <div>
+        <Status/>
         <Menu/>
+        <Timer/>
         <div className="main">
           <ReactTransitionGroup transitionName="fade">
-            <Timer/>
             <RouteHandler/>
           </ReactTransitionGroup>
         </div>
