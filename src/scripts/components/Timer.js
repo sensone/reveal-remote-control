@@ -1,6 +1,7 @@
 'use strict';
 
-const React = require('react/addons');
+const React = require('react/addons')
+  , model = require('./model');
 
 require('styles/Timer.styl');
 
@@ -9,6 +10,19 @@ class Timer extends React.Component {
     super(props);
 
     let now = Date.now();
+
+    model.on('change', function(model) {
+      console.log('current slide name: ' + model.get('name'));
+      console.log('prev : ' + this.state.prevSlideName);
+
+      if (model.get('name') !== this.state.prevSlideName) {
+        this.changeSlide();
+
+        this.setState({
+          prevSlideName: model.get('name')
+        });
+      }
+    }, this);
 
     this.state = {
       start: now,
