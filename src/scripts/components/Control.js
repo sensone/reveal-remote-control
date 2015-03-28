@@ -3,14 +3,23 @@
 const React = require('react/addons')
   , emit = require('./sockets');
 
+let model = require('./model');
+
 require('styles/Control.styl');
 
 class Control extends React.Component {
+  constructor(props) {
+    super(model);
+    this.state = model.toJSON();
+
+    model.on('change', function(model) {
+      this.setState(model.toJSON());
+    }, this);
+  }
   handleClick(e) {
     let action = e.target.firstChild.nodeValue.toLowerCase();
 
-    console.log(action);
-
+    model.set('test', model.get('test') + 1);
     emit(action , {});
   }
 
@@ -28,7 +37,7 @@ class Control extends React.Component {
           <button className="pure-button" onClick={this.handleClick}>Up</button>
         </div>
         <div>
-          <button className="pure-button" onClick={this.handleClick}>Down</button>
+          <button className="pure-button" onClick={this.handleClick.bind(this)}>Down {this.state.test}</button>
         </div>
       </div>
     );
@@ -36,4 +45,3 @@ class Control extends React.Component {
 }
 
 module.exports = Control;
-
