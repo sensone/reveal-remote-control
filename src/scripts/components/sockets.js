@@ -1,7 +1,8 @@
 'use strict';
 
 const io = require('socket.io-client')
-      , socket = io('http://localhost:3005');
+  , model = require('./model')
+  , socket = io('http://localhost:3005');
 
 socket.on('connect' , function () {
   console.log('connected!');
@@ -14,6 +15,7 @@ socket.on('disconnect' , function () {
 function changeHandler(data) {
   console.log('change action');
 
+  model.set(data)
   console.log(JSON.stringify(data));
 }
 socket.on('remote:slidechanged' , changeHandler);
