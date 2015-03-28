@@ -4,6 +4,7 @@ let React = require('react/addons')
     , ReactTransitionGroup = React.addons.TransitionGroup
     , Control = require('./Control')
     , Router = require('react-router')
+    , Timer = require('./Timer')
     , { Route, DefaultRoute, RouteHandler, Link } = Router;
 
 // CSS
@@ -17,33 +18,21 @@ let RevealRemoteControllApp = React.createClass({
   render: function() {
       return (
           <div id="layout">
-              <a href="#menu" id="menuLink" className="menu-link">
-                  <span></span>
-              </a>
+              <div className="pure-menu pure-menu-horizontal pure-menu-scrollable">
+                  <a href="#/" className="pure-menu-link pure-menu-heading">Remote Control</a>
 
-              <div id="menu">
-                  <div className="pure-menu">
-                      <a className="pure-menu-heading" href="#/">Remote</a>
-                      <ul className="pure-menu-list">
-                          <li className="pure-menu-item">
-                              <a href="#/control" className="pure-menu-link">Control</a>
-                          </li>
-                          <li className="pure-menu-item">
-                              <a href="#/pointer" className="pure-menu-link">Pointer</a>
-                          </li>
-
-                          <li className="pure-menu-item">
-                              <a href="#/select" className="pure-menu-link">Select</a>
-                          </li>
-
-                          <li className="pure-menu-item">
-                              <a href="#/audio" className="pure-menu-link">Audio</a>
-                          </li>
-                      </ul>
-                  </div>
+                  <ul className="pure-menu-list">
+                      <li className="pure-menu-item"><a href="#/control" className="pure-menu-link">Slides</a></li>
+                      <li className="pure-menu-item"><a href="#/notes" className="pure-menu-link">Notes</a></li>
+                      <li className="pure-menu-item"><a href="#/pointer" className="pure-menu-link">Pointer</a></li>
+                      <li className="pure-menu-item"><a href="#/select" className="pure-menu-link">Select</a></li>
+                      <li className="pure-menu-item"><a href="#/zoom" className="pure-menu-link">Zoom</a></li>
+                  </ul>
               </div>
+
               <div className="main">
                   <ReactTransitionGroup transitionName="fade">
+                      <Timer/>
                       <RouteHandler/>
                   </ReactTransitionGroup>
               </div>
