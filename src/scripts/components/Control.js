@@ -26,7 +26,7 @@ class Control extends React.Component {
   render() {
     return (
       <div>
-        <p>Content for Control</p>
+        <p>Content for Control {this.state.test}</p>
         <div>
           <button className={'pure-button ' + this.state.buttons.left} onClick={this.handleClick}>Left</button>
         </div>
@@ -37,7 +37,7 @@ class Control extends React.Component {
           <button className={'pure-button ' + this.state.buttons.up} onClick={this.handleClick}>Up</button>
         </div>
         <div>
-          <button className={'pure-button ' + this.state.buttons.down} onClick={this.handleClick.bind(this)}>Down {this.state.test}</button>
+          <button className={'pure-button ' + this.state.buttons.down} onClick={this.handleClick.bind(this)}>Down</button>
         </div>
       </div>
     );
