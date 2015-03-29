@@ -168,6 +168,17 @@ html, body {
   height: 50vh;
 }
 
+.row--up, .row--down, .row--left, .row--right {
+  -webkit-user-select: none;
+  user-select: none;
+
+}
+
+.row--up:active, .row--down:active, .row--left:active, .row--right:active {
+  background-color: #ccc;
+  opacity: 0.5;
+}
+
 .small .row {
   width: 33%;
   float: left;
