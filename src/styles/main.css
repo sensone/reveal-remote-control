@@ -203,3 +203,9 @@ html, body {
 .small .row--left-right div:first-child {
   border-bottom: 1px solid #ccc;
 }
+
+.canvas {
+  background-color: #ddd;
+  width: 100%;
+  height: 100%;
+}
