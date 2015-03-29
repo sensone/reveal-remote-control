@@ -3,7 +3,7 @@
 var RevealRemoteControllApp = require('./RevealRemoteControllApp')
   , React = require('react')
   , Router = require('react-router')
-  , {Route, DefaultRoute} = Router
+  , {Route, Redirect} = Router
   , Control = require('./Control')
   , Pointer = require('./Pointer')
   , Audio = require('./Audio')
@@ -15,14 +15,15 @@ var RevealRemoteControllApp = require('./RevealRemoteControllApp')
 var content = document.getElementById('content');
 
 var Routes = (
-  <Route handler={RevealRemoteControllApp} path="/">
-    <Route name="/control" handler={Control}/>
-    <Route name="/pointer" handler={Pointer}/>
-    <Route name="/select" handler={Select}/>
-    <Route name="/audio" handler={Audio}/>
-    <Route name="/notes" handler={Notes}/>
-    <Route name="/zoom" handler={Zoom}/>
-    <DefaultRoute handler={Control}/>
+  <Route path="/" handler={RevealRemoteControllApp}>
+    <Redirect from="/" to="control"/>
+
+    <Route name="control" handler={Control}/>
+    <Route name="pointer" handler={Pointer}/>
+    <Route name="select" handler={Select}/>
+    <Route name="audio" handler={Audio}/>
+    <Route name="notes" handler={Notes}/>
+    <Route name="zoom" handler={Zoom}/>
   </Route>
 );
 

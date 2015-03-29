@@ -70,7 +70,7 @@ html, body {
   box-sizing: border-box;
 }
 
-.menu__item--active .menu__link {
+.menu__link.active {
   color: #fff;
   text-decoration: underline;
 }
