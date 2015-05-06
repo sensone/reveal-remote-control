@@ -18,12 +18,22 @@ class Zoom extends React.Component {
     React.initializeTouchEvents(true);
   }
   handleClick(e) {
+    let event = e.touches[0]
+      , img = document.querySelector('.pointer-zoomer-image')
+      , width = img.width
+      , height = img.height
+      , realWidth = img.naturalWidth
+      , realHeight = img.naturalHeight
+      , ratioHeight = realHeight / height
+      , ratioWidth = realWidth / width
+      , offsetLeft = img.offsetLeft
+      , offsetTop = img.offsetTop
+      , x = (event.pageX - offsetLeft) * ratioWidth
+      , y = (event.pageY - offsetTop) * ratioHeight;
 
-    let event = e.touches[0];
+    console.log(x, y);
 
-    console.log(event);
-
-    emit('zoom', {x: event.clientX, y: event.clientY, bounds: e.target.getBoundingClientRect()});
+    emit('zoom', {x: x, y: y});
   }
   render() {
     return (

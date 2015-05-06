@@ -161,17 +161,18 @@ html, body {
 }
 
 .zoom-wrapper {
-  height: 50vh;
+  max-height: 50vh;
 }
 
 .pointer-wrapper {
-  height: 50vh;
+  max-height: 50vh;
 }
 .pointer-zoomer {
   text-align: center;
 }
 .pointer-zoomer-image {
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .row--up, .row--down, .row--left, .row--right {

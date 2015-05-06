@@ -22,17 +22,28 @@ class Pointer extends React.Component {
     React.initializeTouchEvents(true);
   }
   handleClick(e) {
+    let event = e.touches[0]
+      , img = document.querySelector('.pointer-zoomer-image')
+      , width = img.width
+      , height = img.height
+      , realWidth = img.naturalWidth
+      , realHeight = img.naturalHeight
+      , ratioHeight = realHeight / height
+      , ratioWidth = realWidth / width
+      , offsetLeft = img.offsetLeft
+      , offsetTop = img.offsetTop
+      , x = (event.pageX - offsetLeft) * ratioWidth
+      , y = (event.pageY - offsetTop) * ratioHeight;
 
-    let event = e.touches[0];
-
-    emit('pointer', {x: event.clientX, y: event.clientY, bounds: e.target.getBoundingClientRect()});
+    console.log(x, y);
+    emit('pointer', {x: x, y: y});
   }
   render() {
     return (
       <div>
         <div className="pointer-wrapper">
-          <div className="canvas pointer-zoomer" onTouchStart={this.handleClick}>
-            <img className="pointer-zoomer-image" src={this.state.screenshot} />
+          <div className="canvas pointer-zoomer" >
+            <img className="pointer-zoomer-image" src={this.state.screenshot} onTouchStart={this.handleClick} />
           </div>
         </div>
         <Control size="small"/>
