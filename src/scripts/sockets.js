@@ -30,6 +30,10 @@ function changeHandler(data) {
   console.log(JSON.stringify(data));
 }
 socket.on('presentation:slidechanged' , changeHandler);
+socket.on('presentation:checkClient', function() {
+  console.log('checkClient')
+  emit('checkClient', getSessionObj());
+});
 
 function emit(eventName , data) {
   console.log('remote:' + eventName);

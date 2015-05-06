@@ -1,6 +1,6 @@
 'use strict';
 
-var RevealRemoteControllApp = require('./RevealRemoteControllApp')
+let RevealRemoteControllApp = require('./RevealRemoteControllApp')
   , React = require('react')
   , Router = require('react-router')
   , { Route, NotFoundRoute} = Router
@@ -11,11 +11,12 @@ var RevealRemoteControllApp = require('./RevealRemoteControllApp')
   , Timer = require('./components/Timer')
   , Notes = require('./components/Notes')
   , session = require('./models/session')
+  , storage = window.localStorage
+  , content = document.getElementById('content')
   , Select = require('./components/Select');
 
-var content = document.getElementById('content');
 
-var Routes = (
+let Routes = (
   <Route handler={RevealRemoteControllApp} path="/">
     // TODO: change NotFoundRoute to DefaultRoute
     // and fix get params
@@ -31,7 +32,7 @@ var Routes = (
 );
 
 Router.run(Routes , function (Handler, state) {
-  var getParams = state.params
+  let getParams = state.params
     , params;
 
   if (getParams.splat) {
@@ -39,6 +40,13 @@ Router.run(Routes , function (Handler, state) {
     session.set({
       id: params[0],
       token: params[1]
+    });
+    storage.setItem('presentation_id', params[0]);
+    storage.setItem('token', params[1]);
+  } else {
+    session.set({
+      id: storage.getItem('presentation_id'),
+      token: storage.getItem('token')
     });
   }
 
