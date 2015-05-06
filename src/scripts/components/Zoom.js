@@ -4,9 +4,16 @@ const React = require('react/addons')
   , emit = require('./../sockets')
   , Control = require('./SmallControl');
 
+let model = require('./../models/model');
+
 class Zoom extends React.Component {
   constructor(opts) {
-    super(opts);
+    super(model);
+    this.state = { screenshot: model.get('screenshot') };
+
+    model.on('change', function(m) {
+      this.setState({screenshot: m.get('screenshot')});
+    }, this);
 
     React.initializeTouchEvents(true);
   }
@@ -22,7 +29,9 @@ class Zoom extends React.Component {
     return (
       <div>
         <div className="zoom-wrapper">
-          <div className="canvas" onTouchStart={this.handleClick}></div>
+          <div className="canvas pointer-zoomer" onTouchStart={this.handleClick}>
+            <img className="pointer-zoomer-image" src={this.state.screenshot} />
+          </div>
         </div>
         <Control size="small"/>
       </div>

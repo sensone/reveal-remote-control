@@ -24,12 +24,12 @@ function getSessionObj() {
 }
 
 function changeHandler(data) {
-  console.log('change action');
+  console.log('change action', data);
 
-  model.set(data);
+  model.set(data.state);
   console.log(JSON.stringify(data));
 }
-socket.on('remote:slidechanged' , changeHandler);
+socket.on('presentation:slidechanged' , changeHandler);
 
 function emit(eventName , data) {
   console.log('remote:' + eventName);

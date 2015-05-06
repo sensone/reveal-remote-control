@@ -167,6 +167,12 @@ html, body {
 .pointer-wrapper {
   height: 50vh;
 }
+.pointer-zoomer {
+  text-align: center;
+}
+.pointer-zoomer-image {
+  height: 100%;
+}
 
 .row--up, .row--down, .row--left, .row--right {
   -webkit-user-select: none;
