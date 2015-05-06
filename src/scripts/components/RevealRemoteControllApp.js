@@ -7,6 +7,7 @@ const React = require('react/addons')
   , Timer = require('./Timer')
   , Menu = require('./Menu')
   , Status = require('./Status')
+  , session = require('./Session')
   , model = require('./model')
   , { Route, DefaultRoute, RouteHandler, Link } = Router;
 
@@ -18,10 +19,12 @@ class RevealRemoteControllApp extends React.Component {
   constructor(props) {
     super(model);
     this.state = model.toJSON();
-
     model.on('change', function(m) {
       this.setState(m.toJSON());
     }, this);
+  }
+  contextTypes() {
+    router: React.PropTypes.func
   }
   changeState(e) {
     e.preventDefault();
