@@ -1,7 +1,7 @@
 'use strict';
 
 const React = require('react/addons')
-  , emit = require('./sockets')
+  , emit = require('./../sockets')
   , Control = require('./SmallControl');
 
 class Zoom extends React.Component {

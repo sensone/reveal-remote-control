@@ -2,18 +2,18 @@
 
 const React = require('react/addons')
   , ReactTransitionGroup = React.addons.TransitionGroup
-  , Control = require('./Control')
+  , Control = require('./components/Control')
   , Router = require('react-router')
-  , Timer = require('./Timer')
-  , Menu = require('./Menu')
-  , Status = require('./Status')
-  , session = require('./Session')
-  , model = require('./model')
+  , Timer = require('./components/Timer')
+  , Menu = require('./components/Menu')
+  , Status = require('./components/Status')
+  , session = require('./models/session')
+  , model = require('./models/model')
   , { Route, DefaultRoute, RouteHandler, Link } = Router;
 
 // CSS
-require('../../styles/normalize.css');
-require('../../styles/main.css');
+require('../styles/normalize.css');
+require('../styles/main.css');
 
 class RevealRemoteControllApp extends React.Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 'use strict';
 
 const React = require('react/addons')
-  , model = require('./model');
+  , model = require('./../models/model');
 
 class Timer extends React.Component {
   constructor(props) {

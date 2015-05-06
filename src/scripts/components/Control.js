@@ -1,12 +1,12 @@
 'use strict';
 
 const React = require('react/addons')
-  , emit = require('./sockets')
-  , injectTapEventPlugin = require("react-tap-event-plugin");
+  , emit = require('./../sockets')
+  , injectTapEventPlugin = require('react-tap-event-plugin');
 
 injectTapEventPlugin();
 
-let model = require('./model');
+let model = require('./../models/model');
 
 class Control extends React.Component {
   constructor(props) {

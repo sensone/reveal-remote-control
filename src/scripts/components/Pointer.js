@@ -2,8 +2,8 @@
 
 const React = require('react/addons')
   , Control = require('./SmallControl')
-  , emit = require('./sockets')
-  , injectTapEventPlugin = require("react-tap-event-plugin");
+  , emit = require('./../sockets')
+  , injectTapEventPlugin = require('react-tap-event-plugin');
 
 injectTapEventPlugin();
 

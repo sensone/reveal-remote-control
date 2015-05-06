@@ -2,8 +2,8 @@
 
 const io = require('socket.io-client')
   , _ = require('underscore')
-  , model = require('./model')
-  , session = require('./session')
+  , model = require('./models/model')
+  , session = require('./models/session')
   , socket = io('http://localhost:3005');
 
 socket.on('connect' , function () {

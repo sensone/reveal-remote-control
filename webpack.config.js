@@ -19,7 +19,7 @@ module.exports = {
   devtool: false,
   entry: [
       'webpack/hot/only-dev-server',
-      './src/scripts/components/main.js'
+      './src/scripts/main.js'
   ],
 
   stats: {
@@ -31,7 +31,7 @@ module.exports = {
     extensions: ['', '.js'],
     alias: {
       'styles': '../../../src/styles',
-      'components': '../../../src/scripts/components/'
+      'components': '../../../src/scripts/*'
     }
   },
   module: {

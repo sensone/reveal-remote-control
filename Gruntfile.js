@@ -28,7 +28,7 @@ module.exports = function (grunt) {
     'webpack-dev-server': {
       options: {
         hot: true,
-        port: 8000,
+        port: 3006,
         webpack: webpackDevConfig,
         publicPath: '/assets/',
         contentBase: './<%= pkg.src %>/',
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
 
     connect: {
       options: {
-        port: 8000
+        port: 3006
       },
 
       dist: {

@@ -4,7 +4,7 @@ const React = require('react/addons')
   , Control = require('./SmallControl');
 
 
-let model = require('./model');
+let model = require('./../models/model');
 
 class Notes extends React.Component {
   constructor(props) {
