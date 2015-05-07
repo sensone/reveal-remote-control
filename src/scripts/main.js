@@ -39,10 +39,11 @@ Router.run(Routes , function (Handler, state) {
     params = getParams.splat.split('/');
     session.set({
       id: params[0],
-      token: params[1]
+      token: params[1] || undefined
     });
+    let t = params[1] || undefined;
     storage.setItem('presentation_id', params[0]);
-    storage.setItem('token', params[1]);
+    storage.setItem('token',t);
   } else {
     session.set({
       id: storage.getItem('presentation_id'),
