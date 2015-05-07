@@ -26,7 +26,7 @@ function getSessionObj() {
   };
 }
 
-function verifySession() {
+function verifySession(dataObj) {
   if (dataObj.presentation_id === session.get('id') && dataObj.token === session.get('token')) {
     return true;
   } else {
@@ -38,18 +38,21 @@ function changeHandler(dataObj) {
   console.log('slidechange')
   let data = dataObj.state;
 
-  if (!data && !verifySession(dataObj)) return;
+  if (!data) return;
+  if (verifySession(dataObj)) {
 
-  model.set({
-    buttons: data.buttons,
-    name: data.name,
-    notes: data.notes,
-    screenshot: data.screenshot
-  });
+    model.set({
+      buttons: data.buttons,
+      name: data.name,
+      notes: data.notes,
+      screenshot: data.screenshot
+    });
+  }
 }
 socket.on('presentation:slidechanged' , changeHandler);
-socket.on('presentation:checkClient', function() {
+socket.on('presentation:checkClient', function(data) {
   console.log('checkClient')
+  console.log(data)
   emit('checkClient', getSessionObj());
 });
 
