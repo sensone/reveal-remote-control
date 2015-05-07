@@ -26,11 +26,19 @@ function getSessionObj() {
   };
 }
 
+function verifySession() {
+  if (dataObj.presentation_id === session.get('id') && dataObj.token === session.get('token')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function changeHandler(dataObj) {
   console.log('slidechange')
   let data = dataObj.state;
 
-  if (!data) return;
+  if (!data && !verifySession(dataObj)) return;
 
   model.set({
     buttons: data.buttons,
