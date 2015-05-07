@@ -2,9 +2,12 @@
 
 const io = require('socket.io-client')
   , _ = require('underscore')
-  , model = require('./models/model')
-  , session = require('./models/session')
-  , socket = io('http://10.6.165.235:3005');
+  , socket = io('http://10.6.165.217:3005');
+
+let model = require('./models/model')
+  , session = require('./models/session');
+
+model.on('all', function(a,b,c) {console.log(a)} )
 
 socket.on('connect' , function () {
   console.log('connected!');
@@ -23,11 +26,18 @@ function getSessionObj() {
   };
 }
 
-function changeHandler(data) {
-  console.log('change action', data);
+function changeHandler(dataObj) {
+  console.log('slidechange')
+  let data = dataObj.state;
 
-  model.set(data.state);
-  console.log(JSON.stringify(data));
+  if (!data) return;
+
+  model.set({
+    buttons: data.buttons,
+    name: data.name,
+    notes: data.notes,
+    screenshot: data.screenshot
+  });
 }
 socket.on('presentation:slidechanged' , changeHandler);
 socket.on('presentation:checkClient', function() {

@@ -6,10 +6,10 @@ let params, model;
 
 params = {
   buttons: {
-    left: 'visible',
-    right: 'visible',
-    up: 'visible',
-    down: 'visible'
+    left: 'invisible',
+    right: 'invisible',
+    up: 'invisible',
+    down: 'invisible'
   },
   name: 'no name',
   notes: '<p> no notes </p>',

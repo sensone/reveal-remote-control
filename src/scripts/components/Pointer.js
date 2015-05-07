@@ -14,9 +14,11 @@ class Pointer extends React.Component {
     super(model);
 
     this.state = { screenshot: model.get('screenshot') };
-
     model.on('change', function(m) {
       this.setState({screenshot: m.get('screenshot')});
+      console.log(777, m)
+      console.log(model)
+
     }, this);
 
     React.initializeTouchEvents(true);
