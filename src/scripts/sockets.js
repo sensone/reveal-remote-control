@@ -2,7 +2,7 @@
 
 const io = require('socket.io-client')
   , _ = require('underscore')
-  , socket = io('http://10.6.165.217:3005');
+  , socket = io('https://warm-coast-3384.herokuapp.com/');
 
 let model = require('./models/model')
   , session = require('./models/session');
