@@ -2,6 +2,7 @@
 
 html, body {
   background: #222222;
+  height: 100%;
 }
 
 /* main */
@@ -224,4 +225,19 @@ html, body {
 .notes-wrapper p {
   color: #fff;
   font-size: 1.4em;
+}
+
+.splash {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #3D86B7;
+}
+.splash__loader {
+  padding-top: 40%;
+}
+.splash__text {
+  margin-top: 40px;
+  color: #FFFFFF;
+  font-size: 3em;
 }
