@@ -220,4 +220,7 @@ html, body {
 .notes-wrapper p {
   color: #fff;
   font-size: 1.5em;
+  line-height: 3vh;
+  padding: 0 10px;
+  overflow-y: scroll;
 }
