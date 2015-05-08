@@ -158,7 +158,6 @@ html, body {
 
 .notes-wrapper {
   height: 50vh;
-  line-height: 3vh;
   padding: 0 10px;
   box-sizing: border-box;
   overflow-y: scroll;
