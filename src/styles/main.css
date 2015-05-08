@@ -158,6 +158,9 @@ html, body {
 
 .notes-wrapper {
   height: 50vh;
+  line-height: 3vh;
+  padding: 0 10px;
+  overflow-y: scroll;
 }
 
 .zoom-wrapper {
@@ -219,8 +222,5 @@ html, body {
 
 .notes-wrapper p {
   color: #fff;
-  font-size: 1.5em;
-  line-height: 3vh;
-  padding: 0 10px;
-  overflow-y: scroll;
+  font-size: 1.4em;
 }
