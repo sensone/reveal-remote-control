@@ -1,8 +1,8 @@
 'use strict';
 
-const React = require('react/addons')
-  , emit = require('./../sockets')
-  , injectTapEventPlugin = require('react-tap-event-plugin');
+const React = require('react/addons'),
+  emit = require('./../sockets'),
+  injectTapEventPlugin = require('react-tap-event-plugin');
 
 injectTapEventPlugin();
 

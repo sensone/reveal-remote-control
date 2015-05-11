@@ -7,7 +7,7 @@ let params, session;
 params = {
   id: undefined,
   token: undefined
-}
+};
 
 session = new Backbone.Model(params);
 

@@ -1,8 +1,8 @@
 'use strict';
 
-const React = require('react/addons')
-  , Router = require('react-router')
-  , Link = Router.Link;
+const React = require('react/addons'),
+  Router = require('react-router'),
+  Link = Router.Link;
 
 class Menu extends React.Component {
   render() {
@@ -27,15 +27,4 @@ class Menu extends React.Component {
   }
 }
 
-/*
-<li className="menu__item">
-  <a href="#/audio" className="menu__link">Audio</a>
-</li>
-<li className="menu__item">
-<a href="#/zoom" className="menu__link">Zoom</a>
-</li>
-*/
-
-
 module.exports = Menu;
-

@@ -1,7 +1,7 @@
 'use strict';
 
-const React = require('react/addons')
-  , Control = require('./SmallControl');
+const React = require('react/addons'),
+  Control = require('./SmallControl');
 
 
 let model = require('./../models/model');

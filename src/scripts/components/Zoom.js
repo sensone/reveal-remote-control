@@ -1,8 +1,8 @@
 'use strict';
 
-const React = require('react/addons')
-  , emit = require('./../sockets')
-  , Control = require('./SmallControl');
+const React = require('react/addons'),
+  emit = require('./../sockets'),
+  Control = require('./SmallControl');
 
 let model = require('./../models/model');
 
@@ -18,18 +18,18 @@ class Zoom extends React.Component {
     React.initializeTouchEvents(true);
   }
   handleClick(e) {
-    let event = e.touches[0]
-      , img = document.querySelector('.pointer-zoomer-image')
-      , width = img.width
-      , height = img.height
-      , realWidth = img.naturalWidth
-      , realHeight = img.naturalHeight
-      , ratioHeight = realHeight / height
-      , ratioWidth = realWidth / width
-      , offsetLeft = img.offsetLeft
-      , offsetTop = img.offsetTop
-      , x = (event.pageX - offsetLeft) * ratioWidth
-      , y = (event.pageY - offsetTop) * ratioHeight;
+    let event = e.touches[0],
+      img = document.querySelector('.pointer-zoomer-image'),
+      width = img.width,
+      height = img.height,
+      realWidth = img.naturalWidth,
+      realHeight = img.naturalHeight,
+      ratioHeight = realHeight / height,
+      ratioWidth = realWidth / width,
+      offsetLeft = img.offsetLeft,
+      offsetTop = img.offsetTop,
+      x = (event.pageX - offsetLeft) * ratioWidth,
+      y = (event.pageY - offsetTop) * ratioHeight;
 
     console.log(x, y);
 

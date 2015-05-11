@@ -1,7 +1,7 @@
 'use strict';
 
-const React = require('react/addons')
-  , model = require('./../models/model');
+const React = require('react/addons'),
+  model = require('./../models/model');
 
 class Timer extends React.Component {
   constructor(props) {
@@ -35,8 +35,8 @@ class Timer extends React.Component {
   }
 
   getFormattedDate(milliseconds) {
-    let seconds = milliseconds / 1000 % 60
-      , minutes = (milliseconds / (1000*60)) % 60;
+    let seconds = milliseconds / 1000 % 60,
+      minutes = (milliseconds / (1000*60)) % 60;
 
     minutes = Math.floor(minutes);
     seconds = Math.floor(seconds);
@@ -76,4 +76,3 @@ class Timer extends React.Component {
 }
 
 module.exports = Timer;
-

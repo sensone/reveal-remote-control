@@ -9,16 +9,16 @@
 var webpack = require('webpack');
 
 module.exports = {
-
   output: {
     publicPath: '/assets/',
     path: 'dist/assets/',
     filename: 'main.js'
   },
 
+  cache: true,
   debug: false,
   devtool: false,
-  entry: './src/scripts/components/main.js',
+  entry: './src/scripts/main.js',
 
   stats: {
     colors: true,
@@ -36,7 +36,7 @@ module.exports = {
     extensions: ['', '.js'],
     alias: {
       'styles': '../../../src/styles',
-      'components': '../../../src/scripts/components/'
+      'components': '../../../src/scripts/**/*'
     }
   },
 
@@ -50,7 +50,7 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'jsx-loader?harmony'
+      loader: 'babel-loader?experimental'
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'

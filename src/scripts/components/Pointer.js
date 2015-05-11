@@ -1,9 +1,9 @@
 'use strict';
 
-const React = require('react/addons')
-  , Control = require('./SmallControl')
-  , emit = require('./../sockets')
-  , injectTapEventPlugin = require('react-tap-event-plugin');
+const React = require('react/addons'),
+  Control = require('./SmallControl'),
+  emit = require('./../sockets'),
+  injectTapEventPlugin = require('react-tap-event-plugin');
 
 let model = require('./../models/model');
 
@@ -16,26 +16,23 @@ class Pointer extends React.Component {
     this.state = { screenshot: model.get('screenshot') };
     model.on('change', function(m) {
       this.setState({screenshot: m.get('screenshot')});
-      console.log(777, m)
-      console.log(model)
-
     }, this);
 
     React.initializeTouchEvents(true);
   }
   handleClick(e) {
-    let event = e.touches[0]
-      , img = document.querySelector('.pointer-zoomer-image')
-      , width = img.width
-      , height = img.height
-      , realWidth = img.naturalWidth
-      , realHeight = img.naturalHeight
-      , ratioHeight = realHeight / height
-      , ratioWidth = realWidth / width
-      , offsetLeft = img.offsetLeft
-      , offsetTop = img.offsetTop
-      , x = (event.pageX - offsetLeft) * ratioWidth
-      , y = (event.pageY - offsetTop) * ratioHeight;
+    let event = e.touches[0],
+      img = document.querySelector('.pointer-zoomer-image'),
+      width = img.width,
+      height = img.height,
+      realWidth = img.naturalWidth,
+      realHeight = img.naturalHeight,
+      ratioHeight = realHeight / height,
+      ratioWidth = realWidth / width,
+      offsetLeft = img.offsetLeft,
+      offsetTop = img.offsetTop,
+      x = (event.pageX - offsetLeft) * ratioWidth,
+      y = (event.pageY - offsetTop) * ratioHeight;
 
     console.log(x, y);
     emit('pointer', {x: x, y: y});

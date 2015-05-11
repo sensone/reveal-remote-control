@@ -15,7 +15,7 @@ params = {
   notes: '<p> no notes </p>',
   test: 0,
   screenshot: undefined
-}
+};
 
 model = new Backbone.Model(params);
 
