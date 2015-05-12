@@ -104,6 +104,36 @@ module.exports = function (grunt) {
           ]
         }]
       }
+    },
+
+    filerev: {
+      options: {
+        encoding: 'utf8',
+        algorithm: 'md5',
+        length: 20
+      },
+      source: {
+        files: [{
+          src: [
+            '<%= pkg.dist %>/images/*',
+            '<%= pkg.dist %>/assets/*.js'
+          ]
+        }]
+      }
+    },
+
+    useminPrepare: {
+      html: 'index.html',
+      options: {
+        dest: '<%= pkg.dist %>'
+      }
+    },
+
+    usemin: {
+      html: '<%= pkg.dist %>/index.html',
+      options: {
+        assetsDirs: ['<%= pkg.dist %>', '<%= pkg.dist %>/images', '<%= pkg.dist %>/assets']
+      }
     }
   });
 
@@ -120,7 +150,14 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', ['karma']);
 
-  grunt.registerTask('build', ['clean', 'copy', 'webpack']);
+  grunt.registerTask('build', [
+    'clean',
+    'copy',
+    'useminPrepare',
+    'webpack',
+    'filerev',
+    'usemin'
+  ]);
 
   grunt.registerTask('default', []);
 };
